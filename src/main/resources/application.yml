@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/postgres?options=-c%20search_path=public
+    username: postgres
+    password: 1234
+
+mybatis:
+  type-aliases-package: study.spring.mybatis_spring
+  mapper-locations: classpath:/study/spring/mybatis_spring/**/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging:
+  pattern:
+    console: "[%t] %-5level %logger{36} - %msg%n"
+  level:
+    study.spring.jta: debug
+    org:
+      mybatis: trace
+      apache:
+        ibatis: trace
+      springframework:
+        transaction:
+          support: trace
+          interceptor: trace
+      jdbc:
+        support:
+          JdbcTransactionManager: trace
+        datasource:
+          DataSourceTransactionManager: trace
+    sun: info
+    com:
+      zaxxer:
+        hikari: trace

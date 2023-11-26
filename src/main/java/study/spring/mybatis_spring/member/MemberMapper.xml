@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="study.spring.mybatis_spring.member.MemberMapper">
+
+    <select id="selectMember" resultType="memberVo">
+        SELECT
+        *
+        FROM
+        member
+        WHERE
+        id = #{id}
+    </select>
+
+    <insert id="insertMember" parameterType="memberVo">
+        INSERT INTO member
+        (id, name)
+        VALUES
+        (#{id}, #{name})
+    </insert>
+
+    <update id="updateMember" parameterType="memberVo">
+        UPDATE member
+        SET
+        name = #{name}
+        WHERE
+        id = #{id}
+    </update>
+
+    <delete id="deleteMember">
+        DELETE from member
+        WHERE
+        id = #{id}
+    </delete>
+
+</mapper>
