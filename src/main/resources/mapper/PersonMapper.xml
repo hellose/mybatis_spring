@@ -2,6 +2,13 @@
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTO Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+<!--
+CREATE TABLE person (
+	id int4 NOT NULL,
+	name varchar(255) NOT NULL,
+	PRIMARY KEY (id)
+);
+ -->
 <mapper namespace="study.spring.mybatis_spring.person.PersonMapper">
 
     <select id="selectPerson" resultType="personVo">
